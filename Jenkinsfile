@@ -34,7 +34,7 @@ pipeline {
         }
         stage("Run image with docker-compose"){
             steps {
-                dir('./devops-integrations-1/workspace'){
+                dir('./devops-integrations-1/workspace/'){
                     sh "pwd"
                     sh 'ls'
                     sh 'docker-compose -v'
