@@ -34,11 +34,11 @@ pipeline {
         }
         stage("Run image with docker-compose"){
             steps {
-                script {
-                    sh 'docker-compose -v'
-//                     sh 'docker-compose up -d'
-                    sh 'docker compose up -d --no-color --wait'
-                    sh 'docker compose ps'
+                dir('./devops-integration'){
+                    script {
+                        sh 'docker-compose -v'
+                        sh 'docker-compose up -d'
+                    }
                 }
             }
         }
