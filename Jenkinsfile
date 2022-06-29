@@ -34,11 +34,11 @@ pipeline {
         }
         stage("Run image with docker-compose"){
             steps {
-                dir('./devops-integrations-1/workspace/'){
+               script{
                     sh "pwd"
                     sh 'ls'
                     sh 'docker-compose -v'
-                    sh 'docker-compose -f ./devops-integrations-1/workspace/docker-compose.yml up -d'
+                    sh 'docker-compose -f /var/jenkins_home/jobs/devops-integrations-1/workspace/docker-compose.yml up -d'
                 }
             }
         }
