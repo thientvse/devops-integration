@@ -35,11 +35,9 @@ pipeline {
         stage("Run image with docker-compose"){
             steps {
                 dir('./devops-integration'){
-                    script {
-                        sh "pwd"
-                        sh 'docker-compose -v'
-                        sh 'docker-compose up -d'
-                    }
+                    sh "pwd"
+                    sh 'docker-compose -v'
+                    sh 'docker-compose -f docker-compose.yml up -d'
                 }
             }
         }
