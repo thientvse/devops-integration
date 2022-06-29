@@ -36,6 +36,7 @@ pipeline {
             steps {
                 dir('./devops-integration'){
                     script {
+                        sh "pwd"
                         sh 'docker-compose -v'
                         sh 'docker-compose up -d'
                     }
